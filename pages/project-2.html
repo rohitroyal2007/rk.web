@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="In-depth technical architecture case study of an enterprise-grade real-time SaaS telemetry dashboard built using reactive design frameworks.">
+<title>SaaS Telemetry Dashboard Case Study | Architecture Deep Dive</title>
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+<header class="navbar">
+<div class="container">
+<a href="../index.html" class="logo">Dev<span>Portfolio</span></a>
+<nav class="nav-menu">
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="projects.html" class="active">Projects</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="menu-toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</div>
+</header>
+
+<main>
+<header class="project-hero-header">
+<div class="container-small">
+<div class="project-breadcrumbs">
+<a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> 
+<a href="projects.html">Projects</a> <i class="fas fa-chevron-right"></i> 
+<span>Case Study 02</span>
+</div>
+<span class="project-category-tag">Data Visualization UI</span>
+<h1>SaaS Enterprise Metrics Telemetry Dashboard</h1>
+<p class="project-lead-sub">Building low-latency real-time visualization systems to parse millions of incoming event metrics seamlessly.</p>
+
+<div class="project-meta-matrix">
+<div class="meta-matrix-item">
+<span class="meta-label">Client / Context</span>
+<span class="meta-value">Apex Web Labs</span>
+</div>
+<div class="meta-matrix-item">
+<span class="meta-label">Timeline Duration</span>
+<span class="meta-value">8 Months Build Cycle</span>
+</div>
+<div class="meta-matrix-item">
+<span class="meta-label">Core Assignment</span>
+<span class="meta-value">Senior UI Engineer</span>
+</div>
+<div class="meta-matrix-item">
+<span class="meta-label">Live Operations</span>
+<span class="meta-value"><a href="https://demo.com" target="_blank">Analytics Node <i class="fas fa-external-link-alt"></i></a></span>
+</div>
+</div>
+</div>
+</header>
+
+<section class="project-featured-visual">
+<div class="container">
+<img src="../assets/images/project-2-main.jpg" alt="SaaS Metrics Analytical Control Panel Display">
+</div>
+</section>
+
+<section class="project-case-body">
+<div class="container-small">
+
+<h2>Project Executive Summary</h2>
+<p>The assignment required building a centralized telemetry reporting panel for business clients tracking active device networks. The goal was to eliminate standard loading delays by moving away from continuous HTTP polling methods, replacing them with persistent streaming pipelines that process incoming metrics smoothly.</p>
+
+<h2>The Architectural Challenges</h2>
+<p>Handling live data processing frameworks in the browser layer introduces significant rendering challenges. We isolated three primary obstacles during original research:</p>
+<ul>
+<li><strong>DOM Fragmentation:</strong> Re-rendering heavy layout sections during quick chart updates triggered severe main thread browser stutter.</li>
+<li><strong>Network Processing Latency:</strong> Standard request structures added massive payload overhead to continuous data exchanges.</li>
+<li><strong>Layout Reflow Strains:</strong> Dynamic changes in analytical components forced continuous layout rendering calculations across mobile displays.</li>
+</ul>
+
+<blockquote>
+"Visual systems dealing with live telemetry streams must process data filtering metrics ahead of DOM mutation procedures to protect browser thread cycles."
+</blockquote>
+
+<h2>Applied Engineering Decisions</h2>
+<p>We designed custom reactive components configured with data parsing filters to capture binary arrays before passing processed structural matrices to graphics rendering modules. This protected interface performance buffers during high transmission cycles.</p>
+
+<pre><code>// Persistent WebSocket Real-Time Stream Controller Example
+const initializeTelemetryStream = (endpointURI, dashboardState) => {
+const activeSocketNode = new WebSocket(endpointURI);
+activeSocketNode.binaryType = "arraybuffer";
+
+activeSocketNode.onmessage = (eventStream) => {
+const structuralDataMatrix = parseBinaryTelemetry(eventStream.data);
+if (structuralDataMatrix.metricPriority === "HIGH") {
+dashboardState.updateRenderPipeline(structuralDataMatrix);
+}
+};
+};</code></pre>
+
+<h2>Measurable Operational Milestones</h2>
+<p>Following systemic integration checks, client telemetry interfaces achieved absolute frame stability during intensive continuous event spikes. Resource payload weights were slashed uniformly across testing channels.</p>
+
+<div class="project-spec-summary-card">
+<h3>Engineering Deliverables Checklist</h3>
+<ul>
+<li>Created highly fluid reporting charts capable of rendering multi-node metrics smoothly.</li>
+<li>Configured persistent data socket layers to completely remove standard server check overhead.</li>
+<li>Optimized component destruction routines to eliminate browser memory leaks completely.</li>
+<li>Designed flexible container reflow parameters targeting smooth presentation metrics cross-device.</li>
+</ul>
+</div>
+
+<div class="project-tech-summary-row">
+<h4>Tech Stack Framework Deployment:</h4>
+<div class="tech-stack-pills">
+<span>VueJS Framework</span><span>D3.js Data Library</span><span>Tailwind CSS</span><span>WebSockets Stream</span><span>Vite Compiler</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="project-case-navigation">
+<div class="container-small">
+<div class="case-nav-row">
+<a href="project-1.html" class="nav-back-link"><i class="fas fa-chevron-left"></i> Previous Case Study</a>
+<a href="project-3.html" class="nav-next-link">Next Case Study <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="main-footer">
+<div class="container footer-grid">
+<div class="footer-brand">
+<a href="../index.html" class="logo">Dev<span>Portfolio</span></a>
+<p>Architecting and executing scalable engineering patterns worldwide.</p>
+</div>
+<div class="footer-links">
+<h4>Sitemap Links</h4>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-socials">
+<h4>Social Pipelines</h4>
+<div class="social-icons">
+<a href="https://github.com" target="_blank" aria-label="GitHub Account"><i class="fab fa-github"></i></a>
+<a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Account"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://twitter.com" target="_blank" aria-label="X Account"><i class="fab fa-x-twitter"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Developer Portfolio. All Rights Reserved. Crafted with pure HTML, CSS, and JS.</p>
+</div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
